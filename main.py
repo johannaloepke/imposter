@@ -88,13 +88,13 @@ def top_ten():
     return top10
 
 def main():
-    #topten = top_ten()
-    #topten = [i[1] for i in topten]
+    topten = top_ten()
+    topten = [i[1] for i in topten]
     average_male_intern = str(average_salary_gender('Male', 'Intern/co-op'))
     average_female_intern = str(average_salary_gender('Female', 'Intern/co-op'))
     average_male_fulltime = str(average_salary_gender('Male', 'Full-time'))
     average_female_fulltime = str(average_salary_gender('Female', 'Full-time'))
-    #print("Top Ten Companies" + topten)
+    print("Top Ten Companies" + topten)
     print("Average male intern salary: " + average_male_intern)
     print("Average female intern salary: " + average_female_intern)
     print("Average male full-time salary: " + average_male_fulltime)
