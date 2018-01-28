@@ -1,0 +1,57 @@
+@font-face {
+    font-family: worldofwater;
+    src: url('fonts/worldOfWater.ttf');
+}
+
+
+html {
+    background-color: black;
+    
+}
+
+.logo h4 {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-family: worldofwater;
+    color: white;
+}
+
+.searchBar p {
+	font-family: sans-serif;
+	text-align: center;
+	margin-top: 20%;
+    padding-top: 20px;
+    padding-bottom: 150px;
+    font-size: 1.5em;
+    color: white;
+    background-color: dimgrey;
+}
+
+
+ul {
+    list-style-type: none;
+    font-family: Arial;
+    font-size: 1.25em;
+    margin: 0;
+    padding-left: 0;
+    overflow: hidden;
+    text-align: center;
+}
+
+li {
+    display: inline;
+    padding-left: 30px;
+}
+
+li a {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+/* Change the link color to #111 (black) on hover */
+li a:hover {
+   color:blueviolet;
+}
