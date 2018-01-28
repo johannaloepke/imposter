@@ -1,0 +1,5 @@
+*.DS_Store
+
+functions/*
+!functions/index.js
+!functions/package.json
