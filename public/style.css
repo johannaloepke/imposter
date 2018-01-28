@@ -3,55 +3,236 @@
     src: url('fonts/worldOfWater.ttf');
 }
 
+@font-face {
+    font-family: primer;
+    src: url('fonts/primer_print.ttf');
+}
+
+@font-face {
+    font-family: primerB;
+    src: url('fonts/primer_print_bold.ttf');
+}
+
+@font-face {
+    font-family: libel;
+    src: url('fonts/libel-suit-rg.ttf');
+}
+
+@font-face {
+    font-family: gnu;
+    src: url('fonts/gnuolane_rg.ttf');
+}
+
+@font-face {
+    font-family: dreamOr;
+    src: url('fonts/dream_orphans.ttf');
+}
+
+@font-face {
+    font-family: dreamOrT;
+    src: url('fonts/dream_orphans_it.ttf');
+}
+
+@font-face {
+    font-family: dreamOrB;
+    src: url('fonts/dream_orphans_bd.ttf');
+}
+
+@font-face {
+    font-family: dreamOrBT;
+    src: url('fonts/dream_orphans_bd-it.ttf');
+}
+
 
 html {
     background-color: black;
     
 }
 
-.logo h4 {
-    padding-top: 20px;
-    padding-bottom: 20px;
-    font-family: worldofwater;
-    color: white;
+.cornerLogo img {
+    margin: 40px 40px 40px 60px;
+    display: inline;
 }
 
-.searchBar p {
-	font-family: sans-serif;
-	text-align: center;
-	margin-top: 20%;
-    padding-top: 20px;
-    padding-bottom: 150px;
-    font-size: 1.5em;
-    color: white;
-    background-color: dimgrey;
+.navbar ul #addData {
+    font-family: gnu;
 }
 
-
-ul {
+.navbar ul {
     list-style-type: none;
-    font-family: Arial;
-    font-size: 1.25em;
-    margin: 0;
+    font-family: primer;
+    font-size: 1.75em;
+    margin: -110px 0 0 10px;
     padding-left: 0;
     overflow: hidden;
     text-align: center;
 }
 
-li {
+.navbar li {
     display: inline;
-    padding-left: 30px;
 }
 
-li a {
+.navbar li a {
     display: inline-block;
     color: white;
-    text-align: center;
-    padding: 14px 16px;
+    padding: 25px 16px;
     text-decoration: none;
 }
 
-/* Change the link color to #111 (black) on hover */
-li a:hover {
-   color:blueviolet;
+.navbar li a:hover {
+   color: lightgrey;
+}
+
+.logo p {
+    padding: 20px;
+    margin-top: 10%;
+    margin-bottom: -30px;
+    font-family: worldofwater;
+    font-size: 6em;
+    color: white;
+    text-align: center;
+}
+
+.belowLogo p {
+    padding-top: 20px;
+    padding-bottom: 50px;
+    margin-top: 0px;
+    margin-bottom: -20px;
+    font-family: dreamOr;
+    font-size: 1.3em;
+    color: white;
+    text-align: center;
+}
+
+.searchBar input[type=text] {
+    width: 60%;
+    margin-top: 15px;
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-bottom: 30%;
+    font-size: 2em;
+    font-family: gnu;
+}
+
+.gradient p {
+    padding: 2px;
+    margin-bottom: 0;
+    background: linear-gradient(black, white);
+}
+
+.topTen h1 {
+    list-style-type: none;
+    font-family: primer;
+    font-size: 2.2em;
+    margin: 0;
+    padding-top:20px;
+    padding-left: 0;
+    padding-bottom: 8px;
+    overflow: hidden;
+    text-align: center;
+    color: black;
+    background: white;
+}
+
+.topTen ul {
+    list-style-type: none;
+    font-family: gnu;
+    font-size: 1.5em;
+    margin: 0;
+    padding-left: 0;
+    overflow: hidden;
+    text-align: center;
+    color: black;
+    background: white;
+}
+
+.topTen li {
+    display: block;
+    padding: 3px;
+}
+
+.endingCredits p {
+    background-color: white;
+    margin: 0;
+    padding-top: 50px;
+    padding-bottom: 20px;
+    text-align: center;
+}
+
+.contentImpSyn h1 {
+    font-family: dreamOrT;
+    font-size: 3em;
+    margin: 0;
+    padding: 50px 10% 20px 10%;
+    overflow: hidden;
+    text-align: center;
+    color: black;
+    background: white;
+}
+
+#buffer p {
+    background-color: white;
+}
+
+.contentImpSyn h2 {
+    font-family: primer;
+    font-size: 1.5em;
+    margin: 0;
+    padding: .2% 10% .2% 10%;
+    overflow: hidden;
+    text-align: center;
+    color: black;
+    background: white;
+}
+
+.contentImpSyn p {
+    font-family: gnu;
+    font-size: 1.5em;
+    margin: 0;
+    padding-top:20px;
+    padding-left: 0;
+    padding-bottom: 8px;
+    overflow: hidden;
+    text-align: center;
+    color: black;
+    background: white;
+}
+
+iframe {
+    margin: 5% 20% 20% 20%;
+}
+
+.contentGap h1 {
+    font-family: dreamOrB;
+    font-size: 3em;
+    margin: 0;
+    padding: 10% 38% 0% 20px;
+    overflow: hidden;
+    text-align: center;
+    color: black;
+    background: white;
+    
+}
+
+.contentGap h2 {
+    font-family: dreamOrB;
+    font-size: 3em;
+    margin: 0;
+    padding: 0 12% 7% 30%;
+    overflow: hidden;
+    text-align: center;
+    color: black;
+    background: white;
+    
+}
+.contentGap h3 {
+    font-family: dreamOrT;
+    font-size: 1em;
+    margin: -10% -30% 0 0;
+    padding: 50px 10% .2% 10%;
+    overflow: hidden;
+    text-align: center;
+    color: black;
+    background: white;
+    
 }
