@@ -15,15 +15,10 @@
 
 import json, os, requests, heapq
 
-import cherrypy
-import flask
-
 from google.cloud import language
 from google.cloud.language import enums
 from google.cloud.language import types
 import six
-
-app = flask.Flask(__name__)
 
 firebase_secret = os.environ['FB_SECRET']
 
@@ -93,23 +88,27 @@ def top_ten():
     return top10
 
 def main():
-    topten = top_ten()
-    topten = [i[1] for i in topten]
+    #topten = top_ten()
+    #topten = [i[1] for i in topten]
     average_male_intern = str(average_salary_gender('Male', 'Intern/co-op'))
     average_female_intern = str(average_salary_gender('Female', 'Intern/co-op'))
     average_male_fulltime = str(average_salary_gender('Male', 'Full-time'))
     average_female_fulltime = str(average_salary_gender('Female', 'Full-time'))
-    print(topten)
-    #index = open("public/index.html").read().format(top_ten1=topten[0], 
-    #                                     top_ten2=topten[1], 
-    #                                     top_ten3=topten[2],
-    #                                     top_ten4=topten[3],
-    #                                     top_ten5=topten[4],
-    #                                     top_ten6=topten[5],
-    #                                     top_ten7=topten[6],
-    #                                     top_ten8=topten[7],
-    #                                     top_ten9=topten[8],
-    #                                     top_ten10=topten[9])
+    #print("Top Ten Companies" + topten)
+    print("Average male intern salary: " + average_male_intern)
+    print("Average female intern salary: " + average_female_intern)
+    print("Average male full-time salary: " + average_male_fulltime)
+    print("Average female full-time salary: " + average_female_fulltime)
+    #index = render_template('public/index.html', topten1=topten[0], 
+    #                                     topten2=topten[1], 
+    #                                     topten3=topten[2],
+    #                                     topten4=topten[3],
+    #                                     topten5=topten[4],
+    #                                     topten6=topten[5],
+    #                                     topten7=topten[6],
+    #                                     topten8=topten[7],
+    #                                     topten9=topten[8],
+    #                                     topten10=topten[9])
     
 if __name__ == "__main__":
     main()

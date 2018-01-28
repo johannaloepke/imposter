@@ -44,22 +44,45 @@
         <p> </p>
 	</div>
 	<div class="topTen">
-        <h1>Top Ten Companies with the Largest Wage Gaps:</h1>
+        <h1>Top Ten Best Companies (based on Google Sentiments):</h1>
         <ul>
-            <li>1. Google</li>
-            <li>2. Amazon</li>
-            <li>3. Cisco</li>
-            <li>4. Google</li>
-            <li>5. Google</li>
-            <li>6. Google</li>
-            <li>7. Google</li>
-            <li>8. Google</li>
-            <li>9. Google</li>
-            <li>10. Google</li>
+            <li>1. Koch Supply & Trading</li>
+            <li>2. Blueport Commerce</li>
+            <li>3. Amazon Robotics</li>
+            <li>4. VMware</li>
+            <li>5. Legendary Applied Analytics</li>
+            <li>6. Suffolk Construction</li>
+            <li>7. Wayfair</li>
+            <li>8. Stripe</li>
+            <li>9. Skillz</li>
+            <li>10. Penn Foster</li>
         </ul> 
 	</div>
     <div class="endingCredits">
-        <p>Copyright Love Peas and Carrots eatLocal loveYourself</p>
+        <p>Copyright 2018</p>
 	</div>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+        // // The Firebase SDK is initialized and available here!
+        //
+        // firebase.auth().onAuthStateChanged(user => { });
+        // firebase.database().ref('/path/to/ref').on('value', snapshot => { });
+        // firebase.messaging().requestPermission().then(() => { });
+        // firebase.storage().ref('/path/to/ref').getDownloadURL().then(() => { });
+        //
+        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+
+        try {
+          let app = firebase.app();
+          let features = ['auth', 'database', 'messaging', 'storage'].filter(feature => typeof app[feature] === 'function');
+          document.getElementById('load').innerHTML = `Firebase SDK loaded with ${features.join(', ')}`;
+        } catch (e) {
+          console.error(e);
+          document.getElementById('load').innerHTML = 'Error loading the Firebase SDK, check the console.';
+        }
+      });
+    </script>
   </body>
 </html>
