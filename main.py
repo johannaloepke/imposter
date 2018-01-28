@@ -1,4 +1,5 @@
-# Copyright 2016 Google Inc.
+#!/usr/bin/env python3
+# Copyright 2016 Google Inc. All Rights Reserved.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -12,23 +13,103 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# [START app]
-import logging
+import json, os, requests, heapq
 
-from flask import Flask
+import cherrypy
+import flask
 
+from google.cloud import language
+from google.cloud.language import enums
+from google.cloud.language import types
+import six
 
-app = Flask(__name__)
+app = flask.Flask(__name__)
 
+firebase_secret = os.environ['FB_SECRET']
 
-@app.route('/')
-def hello():
-    return 'Hello World!'
+# returns all the database entries as json
+def get_Mastersheet():
+    r = requests.get('https://imposter-hacks.firebaseio.com/ masterSheet.json?print=pretty&auth=' + firebase_secret).json()
+    r.pop(0)
+    return r
 
+entries = get_Mastersheet()
+num_of_entries = len(entries)
 
-@app.errorhandler(500)
-def server_error(e):
-    # Log the error and stacktrace.
-    logging.exception('An error occurred during a request.')
-    return 'An internal error occurred.', 500
-# [END app]
+# finds sentiment of given text
+def get_sentiment(text):
+    """Detects sentiment in the text."""
+    client = language.LanguageServiceClient()
+
+    if isinstance(text, six.binary_type):
+        text = text.decode('utf-8')
+
+    # Instantiates a plain text document.
+    document = types.Document(
+        content=text,
+        type=enums.Document.Type.PLAIN_TEXT)
+
+    # Detects sentiment in the document. You can also analyze HTML with:
+    #   document.type == enums.Document.Type.HTML
+    sentiment = client.analyze_sentiment(document).document_sentiment
+
+    return sentiment.score * sentiment.magnitude
+   
+# finds sentiment of specific company
+def company_sentiment(company):
+    sentiment = 0
+    num_of_hits = 0
+    for entry in entries:
+        if entry[3] == company:
+            num_of_hits += 1
+            sentiment += get_sentiment(entry[10])
+            sentiment += get_sentiment(entry[9])
+
+    return sentiment / num_of_hits
+
+# average salary based on gender and position
+def average_salary_gender(gender, position):
+    avg_salary = 0
+    num_of_hits = 0
+    for entry in entries:
+        if entry[1] == gender and (entry[6] == position or position == 'any'):
+            if entry[8] != 'n/a':
+                num_of_hits += 1
+                avg_salary += entry[8]
+
+    if num_of_hits == 0:
+        return 0 
+    return avg_salary / num_of_hits
+
+# returns top ten highest sentiment scoring companies
+def top_ten():
+    top10=[]
+    visited=['n/a']
+    for entry in entries:
+        if entry[3] not in visited:
+            visited.append(entry[3])
+            heapq.heappush(top10, (company_sentiment(entry[3]), entry[3]))
+    top10 = heapq.nlargest(10, (heapq.heappop(top10) for i in range(len(top10))))
+    return top10
+
+def main():
+    topten = top_ten()
+    topten = [i[1] for i in topten]
+    average_male_intern = str(average_salary_gender('Male', 'Intern/co-op'))
+    average_female_intern = str(average_salary_gender('Female', 'Intern/co-op'))
+    average_male_fulltime = str(average_salary_gender('Male', 'Full-time'))
+    average_female_fulltime = str(average_salary_gender('Female', 'Full-time'))
+    print(topten)
+    #index = open("public/index.html").read().format(top_ten1=topten[0], 
+    #                                     top_ten2=topten[1], 
+    #                                     top_ten3=topten[2],
+    #                                     top_ten4=topten[3],
+    #                                     top_ten5=topten[4],
+    #                                     top_ten6=topten[5],
+    #                                     top_ten7=topten[6],
+    #                                     top_ten8=topten[7],
+    #                                     top_ten9=topten[8],
+    #                                     top_ten10=topten[9])
+    
+if __name__ == "__main__":
+    main()
