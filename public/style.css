@@ -55,7 +55,7 @@ html {
 }
 
 .navbar ul #addData {
-    font-family: gnu;
+    font-family: primerB;
 }
 
 .navbar ul {
@@ -80,7 +80,7 @@ html {
 }
 
 .navbar li a:hover {
-   color: lightgrey;
+   color: mediumpurple;
 }
 
 .logo p {
@@ -98,8 +98,8 @@ html {
     padding-bottom: 50px;
     margin-top: 0px;
     margin-bottom: -20px;
-    font-family: dreamOr;
-    font-size: 1.3em;
+    font-family: gnu;
+    font-size: 1.5em;
     color: white;
     text-align: center;
 }
@@ -111,7 +111,7 @@ html {
     margin-right: 20%;
     margin-bottom: 30%;
     font-size: 2em;
-    font-family: gnu;
+    font-family: primer;
 }
 
 .gradient p {
@@ -160,8 +160,8 @@ html {
 }
 
 .contentImpSyn h1 {
-    font-family: dreamOrT;
-    font-size: 3em;
+    font-family: primer;
+    font-size: 2.5em;
     margin: 0;
     padding: 50px 10% 20px 10%;
     overflow: hidden;
@@ -170,15 +170,17 @@ html {
     background: white;
 }
 
-#buffer p {
-    background-color: white;
+.contentImpSyn h1 a {
+    text-decoration: none;
+    color: mediumpurple;
+    font-family: primerB;
 }
 
 .contentImpSyn h2 {
     font-family: primer;
-    font-size: 1.5em;
+    font-size: 2.5em;
     margin: 0;
-    padding: .2% 10% .2% 10%;
+    padding: .2% 10% 15% 10%;
     overflow: hidden;
     text-align: center;
     color: black;
@@ -186,12 +188,10 @@ html {
 }
 
 .contentImpSyn p {
-    font-family: gnu;
-    font-size: 1.5em;
-    margin: 0;
-    padding-top:20px;
-    padding-left: 0;
-    padding-bottom: 8px;
+    font-family: primerB;
+    font-size: 2.5em;
+    margin: -7% 0 0 0 ;
+    padding: 0 10% 10% 10%;
     overflow: hidden;
     text-align: center;
     color: black;
@@ -203,8 +203,8 @@ iframe {
 }
 
 .contentGap h1 {
-    font-family: dreamOrB;
-    font-size: 3em;
+    font-family: primerB;
+    font-size: 3.2em;
     margin: 0;
     padding: 10% 38% 0% 20px;
     overflow: hidden;
@@ -215,8 +215,8 @@ iframe {
 }
 
 .contentGap h2 {
-    font-family: dreamOrB;
-    font-size: 3em;
+    font-family: primerB;
+    font-size: 3.2em;
     margin: 0;
     padding: 0 12% 7% 30%;
     overflow: hidden;
@@ -226,8 +226,8 @@ iframe {
     
 }
 .contentGap h3 {
-    font-family: dreamOrT;
-    font-size: 1em;
+    font-family: gnu;
+    font-size: 1.1em;
     margin: -10% -30% 0 0;
     padding: 50px 10% .2% 10%;
     overflow: hidden;
@@ -235,4 +235,79 @@ iframe {
     color: black;
     background: white;
     
+}
+
+.contentGap h4 {
+    font-family: primer;
+    font-size: 2em;
+    margin: 0;
+    padding: 50px 10% 20% 10%;
+    overflow: hidden;
+    text-align: center;
+    color: black;
+    background: white;
+    
+}
+
+.contentGap h4 a {
+    text-decoration: none;
+    color: mediumpurple;
+    font-family: primerB;
+}
+
+.contentFight h1 {
+    font-family: primerB;
+    font-size: 3.2em;
+    margin: 0;
+    padding: 5%;
+    overflow: hidden;
+    text-align: center;
+    color: black;
+    background: white;
+    
+}
+
+.contentFight h2 {
+    font-family: primer;
+    font-size: 1.5em;
+    margin: 0;
+    padding: 0 32% 0;
+    overflow: hidden;
+    text-align: left;
+    color: black;
+    background: white;
+    
+}
+.contentFight h3 {
+    font-family: gnu;
+    font-size: 1.1em;
+    margin: 0;
+    padding: 10%;
+    overflow: hidden;
+    text-align: center;
+    color: black;
+    background: white;
+    
+}
+
+.infoTitle {
+    color:white;
+    text-align: center;
+    font-family: gnu;
+    font-size: 3em;
+}
+
+.whoWeAre {
+    color: white;
+    text-align: center;
+    font-family: primerB;
+    margin-bottom: 10%;
+    font-size: 2em;
+}
+
+.contactInfo {
+    color: white;
+    text-align: center;
+    font-family: primer;
+    font-size: 2em;
 }
